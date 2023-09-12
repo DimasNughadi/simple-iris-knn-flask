@@ -15,9 +15,9 @@ def result():
       b = request.form['sepal-width']
       c = request.form['petal-length']
       d = request.form['petal-width']
-      inputlist=[a,b,c,d]
+      inputlist = [float(a), float(b), float(c), float(d)]
       ob=MyClassifier()
-      result1=ob.predict(list1=inputlist)
+      result1=ob.predict(inputlist)
       session['result'] = str(result1)
       return render_template("prediction.html",result = result)
 
